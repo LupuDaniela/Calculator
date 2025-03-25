@@ -2,6 +2,7 @@
 This project is a WPF-based Calculator application in C#, inspired by the standard Windows Calculator. It features both Standard and Programmer modes with rich arithmetic, memory, and customization functionalities.
 
 📌 Features
+
 ➕➖✖️➗🟰 Standard Calculator  
 Arithmetic operations: +, −, ×, ÷
 
