@@ -4,6 +4,7 @@ This project is a WPF-based Calculator application in C#, inspired by the standa
 📌 Features
 
 ➕➖✖️➗🟰 Standard Calculator  
+
 Arithmetic operations: +, −, ×, ÷
 
 Additional operations: %, √, 𝑥², 1/x, ±
@@ -13,6 +14,7 @@ Special function buttons: C, CE, ⌫
 Memory operations: MC, MR, M+, M-, MS, M˅
 
 💻 Programmer Mode
+
 Base conversions: Binary, Octal, Decimal, Hexadecimal
 
 Restriction of input characters based on selected base
@@ -20,6 +22,7 @@ Restriction of input characters based on selected base
 Seamless switch between Standard and Programmer modes
 
 📋 Clipboard & Input
+
 Custom Cut, Copy, Paste support using ClipboardService
 
 Input via mouse and keyboard
@@ -27,6 +30,7 @@ Input via mouse and keyboard
 Read-only display field (non-editable)
 
 🔢 Digit Grouping
+
 Toggle grouping based on locale settings (e.g., 1.000 for RO, 1,000 for EN)
 
 
@@ -43,7 +47,8 @@ Digit grouping toggle
 Operator precedence setting
 
 🖼 UI and Layout
-Modern dark-themed interface with styled buttons
+
+Modern dark-themed blue-green interface with styled buttons
 
 SidePanel menu for:
 
@@ -56,6 +61,7 @@ Clipboard operations
 Side panel is non-resizable and floats beside main window
 
 🆘 Help & About
+
 "About" section includes developer name:
 
 Lupu Daniela
