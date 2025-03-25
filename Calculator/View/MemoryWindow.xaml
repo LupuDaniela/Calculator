@@ -1,0 +1,72 @@
+﻿<Window x:Class="Calculator.View.MemoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Memory" Height="400" Width="300" 
+        WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterOwner"
+        BorderThickness="1" BorderBrush="#AAAAAA" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Background="#2f847c">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#2f847c">
+            <Button x:Name="ClearAllMemory" Content="Clear memory items" 
+                    HorizontalAlignment="Center" Padding="10,5" Margin="5"
+                    Click="ClearMemory_Click" 
+                    Background="#ace1af" FontWeight="Bold"/>
+            <Button x:Name="CloseButton" Content="✕" 
+                    HorizontalAlignment="Right" Width="30" Height="30"
+                    Background="Transparent" Foreground="#ace1af" 
+                    BorderThickness="0" FontSize="16"
+                    Click="CloseButton_Click"/>
+        </Grid>
+
+        <ListView x:Name="MemoryList" Grid.Row="1" BorderThickness="0"
+                  SelectionMode="Single" 
+                  SelectionChanged="MemoryList_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding}" 
+                                   FontSize="18" HorizontalAlignment="Right" 
+                                   Padding="10,5" FontWeight="Medium"/>
+                        <Button Grid.Column="1" Content="🗑️" 
+                                Click="DeleteMemoryItem_Click" 
+                                Tag="{Binding}"
+                                Padding="5" Margin="5,0" 
+                                Background="#2f847c" BorderThickness="0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    <Setter Property="BorderBrush" Value="#2f847c"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Grid Grid.Row="2" Background="#2f847c">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="MCButton" Content="MC" Width="40" Margin="5"
+                        Click="MemoryOperation_Click" Background="#ace1af" FontWeight="Bold"/>
+                <Button x:Name="MplusButton" Content="M+" Width="40" Margin="5"
+                        Click="MemoryOperation_Click" Background="#ace1af" FontWeight="Bold"/>
+                <Button x:Name="MminusButton" Content="M-" Width="40" Margin="5"
+                        Click="MemoryOperation_Click" Background="#ace1af" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
